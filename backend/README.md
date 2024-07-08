@@ -133,3 +133,6 @@ Add Poetry to your PATH (if not automatically added):
 
 
     <img width="959" alt="subdomain" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/844d3961-fde0-412c-b01a-40143c119b17">
+
+
+     <img width="959" alt="postgressql2" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/de640cba-cba1-4856-a996-7378c3ba27fc">
