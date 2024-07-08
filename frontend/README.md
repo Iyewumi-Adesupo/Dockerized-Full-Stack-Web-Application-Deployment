@@ -46,6 +46,7 @@ CMD ["npm", "start"]
 ```
 
 6. **Build and Run the Frontend Container**
+
 ```sh
 docker build -t frontend .
 docker run -p 3000:3000 frontend
