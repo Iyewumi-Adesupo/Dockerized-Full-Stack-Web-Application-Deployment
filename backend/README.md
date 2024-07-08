@@ -2,6 +2,33 @@
 
 This directory contains the backend of the application built with FastAPI and a PostgreSQL database.
 
+
+**Cloud Deployment**
+Deploy AWS EC2 instance
+Launch an EC2 Instance:
+
+Choose an Amazon Machine Image (AMI) such as Ubuntu 20.04.
+Select an instance type (e.g., t3 medium as the application is robust).
+Configure security groups to allow HTTP (port 80) and HTTPS (port 443) traffic and custom TCP and set it anywhere.
+
+<img width="959" alt="ec2 instance" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/3f5df5c0-a7c6-4b9a-9abb-c8206581e974">
+
+**Install Docker and Docker Compose**
+On the terminal, install docker and docker compose using the below commands
+
+```sh
+sudo apt update
+sudo apt install docker.io docker-compose -y
+sudo usermod -aG docker ${USER}
+newgrp docker
+```
+**Deploy Your Application**
+
+```sh
+docker-compose up -d
+```
+
+
 ## Prerequisites
 
 - Python 3.8 or higher
@@ -63,15 +90,46 @@ Add Poetry to your PATH (if not automatically added):
 <img width="953" alt="docker c5" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/9291a744-6f6b-4232-8f18-777da24b6b75">
 
 
-6. **Set up the database with the necessary tables**:
+6. **Deploy the Services:**
+
+   ```sh
+   docker-compose up -d
+   ```
+
+7. **Database Configuration**
+   Ensure your FastAPI application is configured to connect to the PostgreSQL database. Update your FastAPI application to use the PostgreSQL URL:
+   ```sh
+   DATABASE_URL = "postgresql://user:password@db:5432/database"
+   ```
+
+8. **Adminer Setup**
+   Configure Adminer to run on port 8080 and ensure it is accessible via the subdomain db.yourdomain.com
+
+9. **Proxy Manager Setup**
+   Configure Nginx Proxy Manager to run on port 8090 and ensure it is accessible via the subdomain proxy.yourdomain.com.
+   
+10. **Set up the database with the necessary tables**:
     ```sh
     poetry run bash ./prestart.sh
     ```
 
-5. **Run the backend server**:
+11. **Run the backend server**:
     ```sh
     poetry run uvicorn app.main:app --reload
     ```
-
-5. **Update configuration**:
+12. **Update configuration**:
    Ensure you update the necessary configurations in the `.env` file, particularly the database configuration.
+
+13. **Set Up Domain and HTTPS**
+    Obtain a Free Subdomain from Afraid DNS by registering and configuring your subdomain.
+    By following these steps, you will successfully deploy your full stack web application using Docker and a reverse proxy, ensuring it is accessible on the web with a 
+    properly configured domain.
+    The pictures confirms the steps above:
+
+    <img width="957" alt="postgresql" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/f1e1e906-cef0-45b9-bc96-95f754ae646b">
+
+
+    <img width="959" alt="proxy manager" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/d676d8f0-a6f7-4a9d-9f88-66ca538bbedb">
+
+
+    <img width="959" alt="subdomain" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/844d3961-fde0-412c-b01a-40143c119b17">
