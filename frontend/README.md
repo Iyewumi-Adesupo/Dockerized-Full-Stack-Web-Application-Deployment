@@ -33,12 +33,22 @@ This command will read the package.json file and install the dependencies listed
 
 4. **Configure API URL**:
    Ensure the API URL is correctly set in the `.env` file. The .env file should be located in the root of the frontend directory.
+
+5. **Create a Dockerfile in the frontend directory**
    ```sh
-   REACT_APP_API_URL=http://localhost:5000/api
-   ```
-5. **Run the Development Server**
-Once the dependencies are installed and the API URL is configured, start the development server:
-   ```sh
-   npm run dev
-   ```
-This command will start the development server and you should see output indicating that the server is running.
+   FROM node:14-alpine
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+6. **Build and Run the Frontend Container**
+```sh
+docker build -t frontend .
+docker run -p 3000:3000 frontend
+```
+
+
