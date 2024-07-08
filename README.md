@@ -1,6 +1,6 @@
-# Full-Stack FastAPI and React Template
+<h1 align="center" id="title">Full Stack Web Application Deployment with Docker</h1>
 
-Welcome to the Full-Stack FastAPI and React template repository. This repository serves as a demo application for interns, showcasing how to set up and run a full-stack application with a FastAPI backend and a ReactJS frontend using ChakraUI.
+Welcome to the Full-Stack FastAPI and React Application deployment. This guide provides step-by-step instructions for deploying a full stack web application using Docker containers and a reverse proxy. The application consists of a React frontend and a FastAPI backend with PostgreSQL as the database. Nginx Proxy Manager is used to serve both frontend and backend on the same port.
 
 ## Project Structure
 
