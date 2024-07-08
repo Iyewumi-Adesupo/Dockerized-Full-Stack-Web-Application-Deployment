@@ -1,3 +1,5 @@
+<h1 align="center" id="title">Dockerized Full Stack Web Application Deployment</h1>
+
 # Frontend - ReactJS with ChakraUI
 
 This directory contains the frontend of the application built with ReactJS and ChakraUI.
