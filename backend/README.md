@@ -49,6 +49,9 @@ Add Poetry to your PATH (if not automatically added):
    docker run -p 8000:8000 backend
    ```
 
+5. **Create a Docker Compose file Using Nginx Proxy Manager**
+
+   
 <img width="959" alt="docker c1" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/9f766f1c-e7d5-4f3a-81aa-1efd05c083ad">
 
 <img width="959" alt="docker c2" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/1da81442-6865-47e5-88a6-13f8480abcac">
@@ -60,7 +63,7 @@ Add Poetry to your PATH (if not automatically added):
 <img width="953" alt="docker c5" src="https://github.com/Iyewumi-Adesupo/Dockerized-Full-Stack-Web-Application-Deployment/assets/135404420/9291a744-6f6b-4232-8f18-777da24b6b75">
 
 
-5. **Set up the database with the necessary tables**:
+6. **Set up the database with the necessary tables**:
     ```sh
     poetry run bash ./prestart.sh
     ```
